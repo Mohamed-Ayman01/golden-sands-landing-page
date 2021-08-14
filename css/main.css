@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Variables Start */
+:root {
+  --light-clr: #ffd6ad;
+  --dark-clr: #3a332b;
+  --med-clr: #67635d;
+  --semi-white: #67635d;
+}
+/* Variables End */
+/* Global */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+ul {
+  list-style: none;
+}
+.head {
+
+}
+.head h2 {
+  position: relative;
+  width: fit-content;
+}
+.head h2::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  background-color: var(--dark-clr);
+  width: 80%;
+  height: 2px;
+  transform: translatex(-50%);
+}
+.head h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: var(--light-clr);
+  animation: head-anim 3s ease infinite alternate;
+}
+@keyframes head-anim {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 15px);
+  }
+}
+/* Global */
+body {
+  font-family: "Montserrat", sans-serif, arial;
+}
+/* Start Header */
+header {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(../imgs/Header\ -\ Bg.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0 15px;
+  position: relative;
+}
+nav .logo img {
+  max-height: 100px;
+  width: 130px;
+}
+nav ul {
+  display: flex;
+}
+@media (max-width: 991px) {
+  nav
+    ul.larg
+    li:not(.larg li:last-of-type, .larg li:nth-of-type(6), .larg ul li) {
+    display: none;
+  }
+}
+nav ul a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+}
+nav ul a:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -42px;
+  width: 0%;
+  height: 2px;
+  background: var(--light-clr);
+  transform: translateX(-50%);
+  transition: width 0.2s linear;
+}
+nav ul a.active,
+nav ul a:hover {
+  color: var(--light-clr);
+}
+nav ul a.active::before,
+nav ul a:hover:not(a.btn, ul.menu li)::before {
+  width: 100%;
+}
+nav a.btn {
+  background: var(--light-clr);
+  color: var(--dark-clr);
+  padding: 8px 10px;
+  border: 2px solid var(--light-clr);
+  font-weight: bold;
+  text-decoration: none;
+}
+nav a.btn:hover {
+  color: var(--light-clr);
+  background: transparent;
+}
+nav ul li.burger {
+  margin-right: 10px;
+  color: #fff;
+  font-size: 1.7rem;
+  transition: 0.2s;
+  display: none;
+}
+@media (max-width: 991px) {
+  nav ul li.burger {
+    display: flex;
+  }
+}
+nav ul li.burger:hover {
+  color: var(--light-clr);
+  cursor: pointer;
+}
+nav ul li.burger:hover ul.menu,
+nav ul li.burger:active ul.menu,
+nav ul li.burger:focus ul.menu 
+nav ul li.burger:focus-within ul.menu{
+  display: flex;
+}
+nav ul.menu {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+  background-color: var(--dark-clr);
+  position: absolute;
+  left: 0px;
+  top: 65%;
+  z-index: 10;
+  opacity: 0.8;
+}
+nav ul.menu li {
+  background-color: var(--light-clr);
+  border-bottom: 1px solid var(--dark-clr);
+}
+nav ul.menu li a {
+  display: block;
+  padding: 15px 0;
+  color: var(--dark-clr);
+  transition: 0.2s linear;
+}
+nav ul.menu li a:hover,
+nav ul.menu li a:active {
+  padding-left: 10px;
+}
+header .container {
+  display: flex;
+  position: relative;
+}
+header .content {
+  color: white;
+  margin-top: 60px;
+}
+header .content h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+header .container p {
+  max-width: 50ch;
+  line-height: 1.8rem;
+  position: relative;
+}
+header .content a {
+  display: block;
+  width: fit-content;
+  font-weight: bold;
+  color: var(--dark-clr);
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 40px 0;
+  background: var(--light-clr);
+  border: 2px solid var(--light-clr);
+  transition: color, background-color 0.2s ease;
+}
+header .content a:hover {
+  color: var(--light-clr);
+  background: transparent;
+}
+header .svg {
+  position: absolute;
+  bottom: -30px;
+  right: 20px;
+  font-size: 2.6rem;
+  color: #ffd6ad;
+  animation: up-down 2s ease 0s alternate infinite;
+}
+@keyframes up-down {
+  0% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(50px);
+  }
+}
+/* End Header */
+/* ==================== */
+/* Start About-Us */
+section.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  section.about {
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+}
+.about section.info {
+  background-color: var(--dark-clr);
+  padding: 30px 15px;
+  flex-basis: 100%;
+}
+.about .info .box {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .about .info .box {
+    flex-direction: column;
+  }
+}
+.about .info .box .ico {
+  font-size: 2rem;
+  padding: 0 20px;
+}
+@media (max-widt: 767px) {
+  .about .info .box .ico{
+    padding: 0 0;
+  }
+}
+.about .info .box .ico i {
+  padding-top: 20px;
+  transition: 0.3s linear;
+}
+.about .info .box .ico:hover i {
+  transform: scale(1.2);
+  text-shadow: 2px -3px  var(--light-clr);
+}
+.about .info .box article {
+  max-width: 40ch;
+}
+@media (max-width: 767px) {
+  .about .info .box article {
+    width: 100%;
+  }
+}
+.about .info .box article h2 {
+  
+}
+.about .info .box article p {
+  
+}
+/* ==================== */
+.about .benifet {
+  background-color: var(--light-clr);
+  color: var(--dark-clr);
+  padding: 30px 15px;
+  flex-basis: 100%;
+}
+.about .benifit .head {
+  
+}
+.about .benifit .head h2 {
+}
+.about .benifit .article {
+  
+}
+.about .benifit .article {
+  
+}
+.about .benifit .article ul {
+
+}
+.about .benifit .article li {
+
+}
+/* End About-Us */
