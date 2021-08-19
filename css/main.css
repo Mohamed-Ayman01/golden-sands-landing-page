@@ -33,12 +33,9 @@
 ul {
   list-style: none;
 }
-.head {
-
-}
 .head h2 {
+  font-size: 38px;
   position: relative;
-  width: fit-content;
 }
 .head h2::before {
   content: '';
@@ -46,8 +43,8 @@ ul {
   bottom: -8px;
   left: 50%;
   background-color: var(--dark-clr);
-  width: 80%;
-  height: 2px;
+  width: 100px;
+  height: 4px;
   transform: translatex(-50%);
 }
 .head h2::after {
@@ -58,14 +55,15 @@ ul {
   width: 15px;
   height: 15px;
   background-color: var(--light-clr);
-  animation: head-anim 3s ease infinite alternate;
+  border: 2px solid var(--dark-clr);
+  animation: head-anim 3s linear infinite alternate;
 }
 @keyframes head-anim {
   0% {
-    left: 0;
+    left: calc(50% - 60px);
   }
   100% {
-    left: calc(100% - 15px);
+    left: calc(50% + 45px);
   }
 }
 /* Global */
@@ -153,6 +151,7 @@ nav a.btn:hover {
   background: transparent;
 }
 nav ul li.burger {
+  margin-top: -5px;
   margin-right: 10px;
   color: #fff;
   font-size: 1.7rem;
@@ -278,7 +277,7 @@ section.about {
   }
 }
 .about .info .box .ico {
-  font-size: 2rem;
+  font-size: 32px;
   padding: 0 20px;
 }
 @media (max-widt: 767px) {
@@ -287,7 +286,7 @@ section.about {
   }
 }
 .about .info .box .ico i {
-  padding-top: 20px;
+  padding-top: 0px;
   transition: 0.3s linear;
 }
 .about .info .box .ico:hover i {
@@ -299,14 +298,16 @@ section.about {
 }
 @media (max-width: 767px) {
   .about .info .box article {
+    display: contents;
     width: 100%;
   }
 }
 .about .info .box article h2 {
-  
+  margin-top: 0;
+  font-size: 32px;
 }
 .about .info .box article p {
-  
+  line-height: 1.4em;
 }
 /* ==================== */
 .about .benifet {
@@ -315,21 +316,13 @@ section.about {
   padding: 30px 15px;
   flex-basis: 100%;
 }
-.about .benifit .head {
-  
+.about .benifet article ul {
+  text-align: start;
+  list-style: circle;
+  margin-top: 60px;
 }
-.about .benifit .head h2 {
-}
-.about .benifit .article {
-  
-}
-.about .benifit .article {
-  
-}
-.about .benifit .article ul {
-
-}
-.about .benifit .article li {
-
+.about .benifet article ul li {
+  line-height: 1.4em;
+  margin: 15px 0;
 }
 /* End About-Us */
