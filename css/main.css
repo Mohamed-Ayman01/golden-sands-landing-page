@@ -34,9 +34,15 @@ ul {
   list-style: none;
 }
 .head h2 {
+  width: fit-content;
   font-size: 38px;
   position: relative;
 }
+/* @media (max-width: 767px) {
+  .head h2 {
+    width: 100%;
+  }
+} */
 .head h2::before {
   content: '';
   position: absolute;
@@ -56,6 +62,7 @@ ul {
   height: 15px;
   background-color: var(--light-clr);
   border: 2px solid var(--dark-clr);
+  border-radius: 50%;
   animation: head-anim 3s linear infinite alternate;
 }
 @keyframes head-anim {
@@ -265,7 +272,7 @@ section.about {
 }
 .about section.info {
   background-color: var(--dark-clr);
-  padding: 30px 15px;
+  padding: 65px 15px;
   flex-basis: 100%;
 }
 .about .info .box {
@@ -287,11 +294,9 @@ section.about {
 }
 .about .info .box .ico i {
   padding-top: 0px;
+  color: var(--light-clr);
   transition: 0.3s linear;
-}
-.about .info .box .ico:hover i {
-  transform: scale(1.2);
-  text-shadow: 2px -3px  var(--light-clr);
+  text-shadow: 2px -3px #ba630d;
 }
 .about .info .box article {
   max-width: 40ch;
