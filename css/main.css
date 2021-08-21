@@ -246,6 +246,7 @@ header .svg {
   right: 20px;
   font-size: 2.6rem;
   color: #ffd6ad;
+  border: 2px solid var(--dark-clr);
   animation: up-down 2s ease 0s alternate infinite;
 }
 @keyframes up-down {
