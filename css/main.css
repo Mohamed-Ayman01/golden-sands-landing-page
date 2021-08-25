@@ -385,8 +385,10 @@ section.about {
   bottom: -60%;
   border-top: 1px solid rgba(255, 255, 255, 0.270);
   background: rgb(225 225 225 / 0.2);
+  backdrop-filter: blur(20px);
+  -o-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(40px);
   transition: bottom 0.4s;
 }
 .work-imgs .box .overlay p {
