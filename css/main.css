@@ -363,6 +363,7 @@ section.about {
 .our-work .work-imgs .box {
   position: relative;
   overflow-y: hidden;
+  box-shadow: 0 0 15px rgba(179, 175, 175, 0.600);
 }
 .our-work .box:hover {
   cursor:  pointer ;
@@ -371,6 +372,7 @@ section.about {
   display: none;
 }
 .work-imgs .box img {
+  display: block;
   max-width: 100%;
   height: 100%;
 }

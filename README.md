@@ -9,4 +9,6 @@ A Project For Golden Sand Company Art Work Company Based In Emirates (Ras Al Kha
 
 > JS
 
-[Live Website](https://golden-sands.netlify.app/ "golden Sands")
+> Vanilla tilt.js Libirary
+
+[Live Preview](https://golden-sands.netlify.app/ "golden Sands")

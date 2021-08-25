@@ -130,7 +130,7 @@
             <img src="imgs/CRAFT [wooden , ...]/craft - 1.jpg" alt="">
             <div class="overlay">
               <h3>Wooden Work</h3>
-              <p>Wodden Key Logo For Hilton.</p>
+              <p>Wodden Key Hanger For Hilton.</p>
             </div>
           </div>
           <div class="box">
@@ -193,7 +193,25 @@
         <button class="show-img">Show More</button>
       </section>
     </section>
-    <!-- Js File -->
+    <!-- Js Files -->
     <script src="js/main.js"></script>
+    <!-- Tilt.Js Libitary -->
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      // Vanilla JavaScript tilt.js Custom Attributes
+      // The Function For Sigle Element
+      // VanillaTilt.init(document.querySelector(".box"), {
+      //   max: 25,
+      //   speed: 400
+      // });
+
+      //It also supports NodeList
+      VanillaTilt.init(document.querySelectorAll(".box"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.5,
+      });
+    </script>
   </body>
 </html>
