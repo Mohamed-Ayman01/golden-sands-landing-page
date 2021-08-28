@@ -16,6 +16,12 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+  -o-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -49,11 +55,6 @@ figure {
   font-size: 38px;
   position: relative;
 }
-/* @media (max-width: 767px) {
-  .head h2 {
-    width: 100%;
-  }
-} */
 .head h2::before {
   content: '';
   position: absolute;
@@ -231,6 +232,7 @@ header .content h1 {
   letter-spacing: 2px;
 }
 header .container p {
+  margin-top: 10px;
   max-width: 50ch;
   line-height: 1.8rem;
   position: relative;
@@ -371,6 +373,19 @@ section.about {
 .our-work .work-imgs .hidden {
   display: none;
 }
+.our-work .work-imgs .anim {
+  animation: fade 1s linear 0s 1;
+}
+@keyframes fade {
+  from {
+    opacity: 0.3;
+    transform: translatey(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
 .work-imgs .box img {
   display: block;
   max-width: 100%;
@@ -432,3 +447,48 @@ section.about {
   left: 0;
 }
 /* End Our-Work */
+/* Start Contact */
+.contact {
+  margin-top: 60px;
+  min-height: 500px;
+  background: url(../imgs/Header\ -\ Bg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+@media (max-width: 786px) {
+  .contact {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr ;
+  }
+  .contact .content {
+  }
+}
+.contact .content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-clr);
+  box-shadow: 10px 5px 40px 40px var(--light-clr);
+}
+.contact .content .head {
+  margin: 0 0 60px;
+}
+.contact .content .head h2 {
+  width: 100%;
+  text-align: center;
+}
+.contact .content .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+.contact .content .contact-info a,
+.contact .content .contact-info address  {
+  display: block;
+  width: fit-content;
+  color: #222;
+}
+/* End Contact */
