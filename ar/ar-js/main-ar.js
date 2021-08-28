@@ -1,4 +1,4 @@
-const showImgsBtn = document.querySelector("button.show-img");
+const showImgsBtn = document.querySelector("button.show-img-ar");
 const hiddenImgs = document.querySelectorAll(".hidden");
 const burgerMenu = document.querySelector("nav ul li.burger");
 const dropMenu = document.querySelector("nav ul.menu");
@@ -10,14 +10,14 @@ showImgsBtn.onclick = function () {
       hiddenImgs[i].classList.remove("hidden");
       hiddenImgs[i].classList.add("anim");
     }
-    showImgsBtn.innerHTML = "Show Less"
+    showImgsBtn.innerHTML = "مشاهدة اقل"
   } else {
     // Add Display None From Images
     for (let i = 0; i < hiddenImgs.length; i++) {
       hiddenImgs[i].classList.add("hidden");
       hiddenImgs[i].classList.remove("anim");
     }
-    showImgsBtn.innerHTML = "Show More"
+    showImgsBtn.innerHTML = "مشاهدة المزيد"
   }
 };
 
