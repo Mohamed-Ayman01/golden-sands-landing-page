@@ -451,7 +451,7 @@ section.about {
 .contact {
   margin-top: 60px;
   min-height: 500px;
-  background: url(../imgs/Header\ -\ Bg.jpg);
+  background: url(../imgs/contact-bg.jpg);
   background-size: cover;
   background-position: center;
   display: grid;
