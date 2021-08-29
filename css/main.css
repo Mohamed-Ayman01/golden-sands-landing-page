@@ -51,7 +51,7 @@ figure {
 }
 .head h2 {
   color: var(--dark-clr);
-  width: fit-content;
+  width: max-content;
   font-size: 38px;
   position: relative;
 }
@@ -118,7 +118,7 @@ nav {
 }
 nav .logo img {
   max-height: 100px;
-  width: 130px;
+  width: 100px;
 }
 nav ul {
   display: flex;
@@ -248,7 +248,7 @@ header .container p {
 }
 header .content a {
   display: block;
-  width: fit-content;
+  width: max-content;
   font-weight: bold;
   color: var(--dark-clr);
   text-decoration: none;
@@ -313,7 +313,7 @@ section.about {
   font-size: 32px;
   padding: 8px 20px;
 }
-@media (max-widt: 767px) {
+@media (max-width: 767px) {
   .about .info .box .ico{
     padding: 0 0;
   }
