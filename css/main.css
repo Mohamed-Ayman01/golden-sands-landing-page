@@ -4,6 +4,7 @@
   --light-clr: #ffd6ad;
   --dark-clr: #3a332b;
   --med-clr: #67635d;
+  --dark-clr: #845ec2;
   --semi-white: #67635d;
 }
 /* Variables End */
@@ -21,6 +22,19 @@ html {
   -o-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -webkit-scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  width: 13px;
+  background: #ffd6adad;
+}
+body::-webkit-scrollbar-thumb {
+  background: #3a332ba2;
+}
+body::-webkit-scrollbar:hover {
+    background: var(--light-clr);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-clr);
 }
 .container {
   padding-left: 15px;
@@ -46,19 +60,16 @@ html {
 ul {
   list-style: none;
 }
-figure {
-  margin: 0;
-}
 .head h2 {
-  color: var(--dark-clr);
   width: max-content;
   font-size: 38px;
   position: relative;
+  color: var(--dark-clr);
 }
 .head h2::before {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -20px;
   left: 50%;
   background-color: var(--dark-clr);
   width: 100px;
@@ -68,7 +79,7 @@ figure {
 .head h2::after {
   content: '';
   position: absolute;
-  bottom: -15px;
+  bottom: -27px;
   left: 50%;
   width: 15px;
   height: 15px;
@@ -138,7 +149,7 @@ nav ul a {
   transition: 0.3s;
   overflow: hidden;
 }
-nav ul a:before {
+nav ul > a:before {
   content: "";
   position: absolute;
   left: 50%;
@@ -149,12 +160,12 @@ nav ul a:before {
   transform: translateX(-50%);
   transition: width 0.2s linear;
 }
-nav ul a.active,
-nav ul a:hover {
+nav ul > a.active,
+nav ul > a:hover {
   color: var(--light-clr);
 }
-nav ul a.active::before,
-nav ul a:hover:not(a.btn, ul.menu li)::before {
+nav ul > a.active::before,
+nav ul > a:hover:not(a.btn, ul.menu li)::before {
   width: 100%;
 }
 nav a.btn {
@@ -187,20 +198,19 @@ nav ul li.burger:hover {
   cursor: pointer;
 }
 nav ul.menu {
-  width: 100%;
+  width: 320px;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  display: none;
-  flex-direction: column;
-  background-color: var(--dark-clr);
-  position: absolute;
-  left: 0px;
-  top: 100%;
-  z-index: 10;
-  opacity: 0.8;
   display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+  background-color: var(--light-clr);
 }
-nav ul.hidden {
+nav ul.menu.hidden {
   display: none;
 }
 nav ul.animation {
@@ -214,19 +224,51 @@ nav ul.animation {
     transform: translateX(0px);
   }
 }
-nav ul.menu li {
-  background-color: var(--light-clr);
-  border-bottom: 1px solid var(--dark-clr);
+nav ul.menu > * {
+  flex-basis: 100%;
 }
-nav ul.menu li a {
+nav ul .exit {
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background: red;
+}
+nav ul .exit:hover {
+  background: rgba(255, 0, 0 , 80%);
+}
+nav ul figure {
+  text-align: center;
+  background-color: var(--dark-clr);
+}
+nav ul.media {
+  justify-content: center;
+  background-color: var(--dark-clr);
+}
+nav ul.media li a{
+  padding: 5px 8px;
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  color: var(--light-clr);
+}
+nav ul.media li a:hover {
+  text-shadow: 0 0 3px var(--light-clr);
+}
+nav ul.menu > li {
+  display: flex;
+  align-items: center;
+  border-top: 2px solid #e9b582;
+  transition: 0.2s linear;
+}
+nav ul.menu > li a {
   display: block;
-  padding: 15px 0;
   color: var(--dark-clr);
   transition: 0.2s linear;
 }
-nav ul.menu li a:hover,
-nav ul.menu li a:active {
-  padding-left: 10px;
+nav ul.menu > li:hover {
+  background-color: #e9b582;
 }
 header .container {
   display: flex;
@@ -418,6 +460,11 @@ section.about {
   -webkit-backdrop-filter: blur(20px);
   transition: bottom 0.4s;
 }
+@supports not (backdrop-filter) {
+  .work-imgs .box .overlay {
+    background-color: var(var(-light-clr));
+  }
+}
 .work-imgs .box .overlay p {
   margin-top: 15px;
 }
@@ -515,6 +562,15 @@ footer .container {
 footer .container .content {
   display: flex;
   justify-content: center;
+}
+@media (max-width: 600px) {
+  footer .container .content  {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+  }
 }
 footer .container .content  h2 {
   font-size: 2em;
