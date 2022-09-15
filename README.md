@@ -3,12 +3,12 @@ A Project For Golden Sand Company Art Work Company Based In Emirates (Ras Al Kha
 
 ## Used Technologies :
 
-> HTML5
+- HTML5
 
-> CSS3
+- CSS3
 
-> JS
+- JS
 
-> Vanilla tilt.js Libirary
+- Vanilla tilt.js Libirary
 
 [Live Preview](https://golden-sands.netlify.app/ "golden Sands")
